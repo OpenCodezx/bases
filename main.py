@@ -1,4 +1,10 @@
-i=0
-while True:
-    i+=1
-    print(f"саня лох x{i}")
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, Flask Server is Running!"
+
+if __name__ == '__main__':
+    app.run(debug=True,host="0.0.0.0",port=5000)
